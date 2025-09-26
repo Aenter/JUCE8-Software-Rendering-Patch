@@ -1,5 +1,5 @@
 # JUCE8 - Software Rendering Patch
-A simple Python script that enforces software rendering for JUCE8-based applications (both as VSTs and standalone) by patching instructions.\
+A simple Python script that forces software rendering for JUCE8-based applications (both as VSTs and standalone) by patching instructions.\
 This can work as a temporary fix for issues such as black screen and crashes on Linux.
 
 <img width="2555" height="1440" alt="JUCE8-SWAM" src="https://github.com/user-attachments/assets/31596af7-9792-491d-9b39-48651bc3ec7f" />
