@@ -24,11 +24,16 @@ with open(input_path, "rb") as executable:
     exe_bytes = executable.read()
 
 # Patch
+patch_successful = False
 for pattern, patch in pattern_patch_pairs:
-    print(f"Patching pattern from\n\"{pattern}\"\nto\n\"{patch}\"...")
+    print(f"Patching pattern from\n\"{pattern}\"\nto\n\"{patch}\"")
     if pattern not in exe_bytes:
-        raise Exception("Pattern not found!")
+        print("Pattern not found! Skipping...")
+        continue
     exe_bytes = exe_bytes.replace(pattern, patch)
+    patch_successful = True
+if not patch_successful:
+    raise Exception("Could not find any matching pattern!")
 print(f"Finished patching.")
 
 # Handle missing output path
