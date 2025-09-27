@@ -20,6 +20,7 @@ output_path = args.output
 
 # Read binary
 exe_bytes = None
+pattern_found = 0
 with open(input_path, "rb") as executable:
     exe_bytes = executable.read()
 
@@ -27,9 +28,15 @@ with open(input_path, "rb") as executable:
 for pattern, patch in pattern_patch_pairs:
     print(f"Patching pattern from\n\"{pattern}\"\nto\n\"{patch}\"...")
     if pattern not in exe_bytes:
-        raise Exception("Pattern not found!")
-    exe_bytes = exe_bytes.replace(pattern, patch)
+        print(f"Pattern not found!")
+    else:
+        print(f"Pattern found!")
+        exe_bytes = exe_bytes.replace(pattern, patch)
+        pattern_found = 1
 print(f"Finished patching.")
+
+if pattern_found == 0:
+    raise Exception("Patterns not found! Exiting...")
 
 # Handle missing output path
 if not output_path:
@@ -45,3 +52,4 @@ with open(output_path, "wb") as executable:
     executable.write(exe_bytes)
 print(f"The file has been patched and saved as \"{output_path}\"")
 input("Press any key to exit.")
+
