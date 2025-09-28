@@ -20,9 +20,9 @@ This can work as a temporary fix for issues such as black screen and crashes on 
 - **-a**: Automatically overwrite files without asking user for confirmation.
 ### Examples
 ```
-python3 juce_patch.py -i /home/mekuu/.wine/drive_c/Program Files/Audio Modeling/SWAM Cello/SWAM Cello 3.exe -o /home/mekuu/.wine/drive_c/Program Files/Audio Modeling/SWAM Cello/SWAM Cello 3 Patched.exe
-python3 juce_patch.py -i /home/mekuu/.wine/drive_c/Program Files/Audio Modeling/SWAM Cello/SWAM Cello 3.exe
-python3 juce_patch.py -i /home/mekuu/.wine/drive_c/Program Files/Common Files/VST3/SWAM/**/*.vst3 -a
+python3 juce_patch.py -i "/home/mekuu/.wine/drive_c/Program Files/Audio Modeling/SWAM Cello/SWAM Cello 3.exe" -o "/home/mekuu/.wine/drive_c/Program Files/Audio Modeling/SWAM Cello/SWAM Cello 3 Patched.exe"
+python3 juce_patch.py -i "/home/mekuu/.wine/drive_c/Program Files/Audio Modeling/SWAM Cello/SWAM Cello 3.exe"
+python3 juce_patch.py -i "/home/mekuu/.wine/drive_c/Program Files/Common Files/VST3/SWAM/**/*.vst3" -a
 ```
 
 ## References
